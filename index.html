@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SChat</title>
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    </head>
+    <body>
+      <h1>Secure Chatting Client Example Project</h1>
+
+    <form class="form form-container">
+        <div class="row submission-group">
+                <label for="remote-public-key">Set Remote Public Key (RSA PKCS8 PEM)</label>
+                <textarea id="remote-public-key" placeholder="Enter remote public key in PKCS8 formatting" class="submission-article"></textarea>
+                <button id="b-remote-public-key" class="btn waves-effect waves-light submission-article" type="button">Set
+                    <i class="material-icons right">lock</i>
+                </button>
+        </div>
+
+        <div class="row submission-group">
+                <label for="remote-address">Set Remote Target (IP/Port)</label>
+                <input id="remote-address" placeholder="127.0.0.1:8087" class="submission-article validate" type="text" value="localhost"></input>
+                <input id="local-port" placeholder="Local Port" class="submission-article validate" type="number" value="8087" style="margin-top: 20px"></input>
+                <input id="remote-port" placeholder="Remote Port" class="submission-article validate" type="number" value="8087"></input>
+                <button id="b-remote-address" class="btn waves-effect waves-light submission-article" type="button">Set
+                    <i class="material-icons right">send</i>
+                </button>
+        </div>
+
+        <div class="row submission-group" style="margin-top: 90px">
+                <label for="local-keypair">Generate new Keypair (RSA PKCS8 PEM)</label>
+                <textarea READONLY id="local-public" placeholder="Only the public key will be displayed here" class="submission-article"></textarea>
+                <textarea READONLY id="local-private" placeholder="Only the private key will be displayed here" class="submission-article"></textarea>
+                <div class="input-field inline">
+                    <button id="b-local-keypair" class="btn waves-effect waves-light f-left" type="button">Generate
+                        <i class="material-icons right">verified_user</i>
+                    </button>
+                    <input id="local-bitcount" placeholder="Enter RSA Key Size (1024+ Suggested)" class="validate f-left" type="number" value="2048"></input>
+                </div>
+        </div>
+    </form>
+    <div class="io-container">
+        <textarea READONLY id="message-output" rows="12"></textarea>
+        <input id="message-input" placeholder="Enter a message to securely send to the remote Endpoint"></input>
+    </div>
+
+    <style>
+
+        #message-output {
+            height: 435px;
+        }
+
+        .form-container {
+            width: 600px;
+            float: left;
+            margin-left: 10px;
+        }
+
+        .io-container {
+            width: 500px;
+            float: left;
+            margin-left: 30px;
+        }
+
+        .submission-group {
+            width: 600px;
+        }
+
+        .submission-article {
+            float: left;
+            margin-right: 500px;
+            min-width: 600px;
+            max-width: 600px;
+            max-height: 600px;
+        }
+
+        .f-left {
+            float: left;
+        }
+    </style>
+
+  
+
+    
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script>
+        global.jQuery   = require('jquery');
+        global.$        = global.jQuery;
+    </script>
+    <script src="schat.js"></script>
+  </html>
