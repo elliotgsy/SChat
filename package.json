@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^2.0.8",
+    "stun": "^1.2.1",
     "electron-builder": "^20.28.3"
   },
   "dependencies": {
@@ -18,7 +19,7 @@
     "jquery": "^3.3.1",
     "node-rsa": "^1.0.1",
     "public-ip": "^2.4.0",
-    "udp-hole-puncher": "^1.0.2"
+    "stun": "^1.2.1"
   },
   "build": {
     "appId": "your.id",

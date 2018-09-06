@@ -15,15 +15,15 @@ const {session, app, BrowserWindow} = require('electron')
       webPreferences: { 
         nodeIntegration: true,
         contextIsolation: false, 
-        webSecurity: true,
-        allowRunningInsecureContent: false,
+        webSecurity: false,
+        allowRunningInsecureContent: true,
         sandbox: false
       }
     })
     win.loadFile('client/index.html')
   
     // Open the DevTools.
-    //win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
     win.on('closed', () => {
       win = null
